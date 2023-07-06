@@ -18,15 +18,18 @@ var parseUrl = url.parse(req.url,true);
 var path = parseUrl.pathname;
 var trimmedPath = path.replace(/^\/+$/g,'');
 
+//Get the query string as a Object 
+var queryStringObject = parseUrl.query;
+
+
 //Get the HTPP Method
 var method = req.method.toLowerCase();
 
 //Send the response    
     res.end('Hello World\n');
 
-
 //Log the request path 
-console.log ('Request recieved on port ' +trimmedPath+ 'with the method:'+method);
+console.log ('Request recieved on port ' +trimmedPath+ 'with the method:'+method + 'and with these query string parameters ',queryStringObject);
 
 });
 
