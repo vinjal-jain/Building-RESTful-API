@@ -25,11 +25,14 @@ var queryStringObject = parseUrl.query;
 //Get the HTPP Method
 var method = req.method.toLowerCase();
 
+//Get the headers as an object 
+var headers = req.headers;
+
 //Send the response    
     res.end('Hello World\n');
 
 //Log the request path 
-console.log ('Request recieved on port ' +trimmedPath+ 'with the method:'+method + 'and with these query string parameters ',queryStringObject);
+console.log ('Request recieved with these headers',headers);
 
 });
 
