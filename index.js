@@ -17,7 +17,7 @@ var server = http.createServer(function (req, res) {
 
     //Get the Path 
     var path = parseUrl.pathname;
-    var trimmedPath = path.replace(/^\/+$/g, '');
+    var trimmedPath = path.replace(/^\/+|\/+$/g, '');
 
     //Get the query string as a Object 
     var queryStringObject = parseUrl.query;
