@@ -64,6 +64,7 @@ payload = typeof(payload) == 'object' ?
 var payloadString = JSON.stringify(payload);
 
 //Return the response
+res.setHeader('Content-Type','application/json');
 res.writeHead(statusCode);
 res.end(payloadString);
 
