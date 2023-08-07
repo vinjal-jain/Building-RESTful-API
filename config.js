@@ -3,7 +3,7 @@
 *
 */
 
-const { strict } = require("assert");
+
 
 //Container for all the environments 
 var environments = {};

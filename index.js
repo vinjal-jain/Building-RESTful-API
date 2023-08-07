@@ -10,6 +10,7 @@ var url = require('url');
 var StringDecoder = require('string_decoder').StringDecoder;
 var config = require('./config');
  var fs = require('fs');
+
 //Instantiate the HTTP server 
 var httpServer = http.createServer(function (req, res) {
 unifiedServer(req,res);
@@ -17,7 +18,7 @@ unifiedServer(req,res);
 });
 
  //Start the HTTP server 
-httpServer.listen(config.httpPort , function () {
+httpServer.listen(config.httpPort , function(){
     console.log("The server is listening on port" + config.httpPort);
 });
 
