@@ -32,5 +32,5 @@ var enviornmentToExport = typeof(environments[currentEnvironment]) ==
 'object' ? environments[currentEnvironment] :
 environments.staging ;
 
-//Export the module 
+//Export the module
 module.exports = enviornmentToExport;

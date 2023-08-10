@@ -10,6 +10,22 @@ var url = require('url');
 var StringDecoder = require('string_decoder').StringDecoder;
 var config = require('./config');
  var fs = require('fs');
+ /*var _data = require('./lib/data');
+
+ //TESTING
+ //@TODO delete this 
+
+ //update command 
+ _data.update('test','newFile',{'sasuke' : 'sharingan'},function(err){
+    console.log('this was the error',err);
+ });
+ 
+ //delete command
+ _data.delete('test','newFile',function(err){
+    console.log('this was the error',err);
+ });*/
+ 
+
 
 //Instantiate the HTTP server 
 var httpServer = http.createServer(function (req, res) {
@@ -104,10 +120,12 @@ var unifiedServer = function(req,res){
 //Define the handlers 
 var handlers = {};
 
-//Sample handler 
-handlers.sample = function (data, callback) {
-    callback(406, { 'name': 'sample handler' });
+//Ping handler 
+handlers.ping = function(data,callback){
+ callback(200);   
 };
+
+
 
 //Not found handler
 handlers.notfound = function (data, callback) {
@@ -116,5 +134,5 @@ handlers.notfound = function (data, callback) {
 
 //Define a request router
 var router = {
-    'sample': handlers.sample
+    'ping': handlers.ping
 };
